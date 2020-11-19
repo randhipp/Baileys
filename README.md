@@ -494,10 +494,10 @@ This will enable you to see all sorts of messages WhatsApp sends in the console.
 
     Hence, you can register a callback for an event using the following:
     ``` ts
-    conn.on (["action", null, "battery"], json => {
+    conn.on ('CB:action,,battery', async (json) => {
         const batteryLevelStr = json[2][0][1].value
         const batterylevel = parseInt (batteryLevelStr)
-        console.log ("battery level: " + batterylevel + "%")
+        console.log (`${bot.phone} | Battery level: ${batterylevel}%`)
     })
     ```
     This callback will be fired any time a message is received matching the following criteria:
